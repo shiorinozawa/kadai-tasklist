@@ -1,16 +1,5 @@
-<ul class="media-list">
-  <% usertasks.each do |usertask| %>
-    <% user = usertask.user %>
-    <li class="media">
-      <div class="media-left">
-        <img class="media-object img-rounded" src="<%= gravatar_url(current_user, options = { size: 50 }) %>" alt="">
-      </div>
-      <div class="media-body">
-        <div>
-          <%= link_to user.name, user_path(user) %> <span class="text-muted">posted at <%= usertask.created_at %></span>
-        </div>
-        <div>
-          <!--<p>status:<%= usertask.status%> task:<%= usertask.content %></p>-->
+<h1>タスク一覧</h1>
+
           <table class="table table-striped">
             <thead>
               <tr>
@@ -29,9 +18,3 @@
               <% end %>
             </tbody>
           </table>
-        </div>
-      </div>
-    </li>
-  <% end %>
-  <%= paginate usertasks %>
-</ul>
